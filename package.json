@@ -1,17 +1,17 @@
 {
-  "name": "transcription-hub",
-  "description": "One stop place for all jazz solo transcriptions",
-  "version": "0.0.1-1",
+  "name": "WebMD",
+  "description": "Prototype",
+  "version": "0.0.1",
   "author": "Varun Singh <Varun_Singh@brown.edu>",
   "scripts": {
-    "start": "startjitsu"
+    "start": "server.js"
   },
-  "engines": [
-    "node"
-  ],
+  "engines": {
+    "node": "v0.6.x"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vjsingh/Transcription-Hub"
+    "url": "https://github.com/vjsingh/WebMD"
   },
   "dependencies": {
     "less": "1.1.x",
@@ -28,5 +28,13 @@
     "watch-less": "0.0.x",
     "jquery": "1.6.x"
   },
-  "subdomain": "jazz"
+  "subdomain": "webmd",
+  "env": {
+    "SUBDOMAIN": "webmd",
+    "NODE_ENV": "production"
+  },
+  "domains": [],
+  "databases": {},
+  "ctime": 1331316704252,
+  "mtime": 1331317214876
 }

@@ -33,13 +33,15 @@ if (IS_LOCAL_MACHINE) {
 } else {
   serverDir = '/var/jazz/';
 }
-process.chdir(serverDir);
+//process.chdir(serverDir);
 
 function getIsFirefox(req) {
   return (/firefox/i).test(req.headers['user-agent']);
 }
 app.configure(function(){
-  app.set('db-uri', 'mongodb://localhost/' + siteConf.dbName);
+  //app.set('db-uri', 'mongodb://localhost/' + siteConf.dbName);
+  app.set('db-uri', "mongodb://nodejitsu:5e445078e063c9e14b2b1c8efacdac33@staff.mongohq.com:10076/nodejitsudb254655919034");
+
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   // set pretty to false for editable fields in transcriptionDisplay
