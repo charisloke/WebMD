@@ -12,7 +12,7 @@ var express = require('express'),
   mongoStore = require('connect-mongo'),
   models = require('./models'),
   stylus = require('stylus'),
-  siteConf = require('./lib/getConfig'),
+  siteConf = require('./siteConfig.js'),
   fs = require('fs'),
   path = require('path'),
   db,
@@ -60,10 +60,12 @@ app.configure(function(){
 
   app.use(express.cookieParser());
   app.use(express.session({
+    /*
     store: new mongoStore({
       db: siteConf.dbName,
       host: 'localhost'
     }),
+    */
     secret: siteConf.sessionSecret,
     maxAge: new Date(Date.now() + 3600000)
   }));
@@ -82,6 +84,7 @@ app.configure(function(){
 
   app.dynamicHelpers({
     user: function(req, res) {
+      return {};
       return req.currentUser || new User();
     },
     scripts: function(req, res) {
@@ -189,6 +192,8 @@ function member(req, res, next) {
   }
 }
 function loadUser(req, res, next) {
+  next();
+  /*
   function foundUser(err, user) {
     if (user) {
       req.currentUser = user;
@@ -202,6 +207,7 @@ function loadUser(req, res, next) {
   } else {
     next();
   }
+  */
 }
 function checkUser(req, res, next) {
   //console.log(req.currentUser);
@@ -216,7 +222,7 @@ function validateErr(req, res, next) {
 }
 
 app.listen(3000);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+//console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 
 
 
@@ -229,6 +235,15 @@ app.get('/svg', function(req, res) {
   res.render('svg', {layout: ''});
 });
 app.get('/', function(req, res) {
+  console.log("AAA");
+  res.render('index', {
+    locals: {
+      trCount: 5,
+      userCount: 5
+    }
+  });
+  console.log("BBB");
+  /*
   Transcription.count({}, function(err, trCount) {
     if (err) {
       throw new Error(err);
@@ -245,6 +260,7 @@ app.get('/', function(req, res) {
       });
     });
   });
+  */
 });
 app.get('/privacy', function(req, res) {
   res.render('privacy');
@@ -1311,6 +1327,7 @@ function makeEmailList() {
     });
   });
 }
+/*
 makeEmailList();
 Transcription.find({title: 'Unknown'}, function(err, trs) {
   trs.forEach(function(tr) {
@@ -1323,7 +1340,7 @@ Transcription.find({title: 'Unknown'}, function(err, trs) {
       tr.uploadTime = 1327262166151;
       tr.save();
     }
-    */
+
   });
 });
 User.find({}, function(err, users) {
@@ -1334,3 +1351,4 @@ User.find({}, function(err, users) {
     }
   });
 });
+*/
