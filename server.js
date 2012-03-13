@@ -235,14 +235,12 @@ app.get('/svg', function(req, res) {
   res.render('svg', {layout: ''});
 });
 app.get('/', function(req, res) {
-  console.log("AAA");
   res.render('index', {
     locals: {
       trCount: 5,
       userCount: 5
     }
   });
-  console.log("BBB");
   /*
   Transcription.count({}, function(err, trCount) {
     if (err) {
