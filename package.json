@@ -1,7 +1,7 @@
 {
   "name": "WebMD",
   "description": "Prototype",
-  "version": "0.0.1-7",
+  "version": "0.0.1-8",
   "author": "Varun Singh <Varun_Singh@brown.edu>",
   "scripts": {
     "start": "server.js"
