@@ -32,9 +32,6 @@ body {
   height: 100%;
   padding-bottom: 10em;
 }
-.welcomeText {
-  width: 76%;
-}
 /*
 +  margin: 0;
 +  position:absolute;
@@ -284,4 +281,9 @@ body {
   position: relative;
   top: 10px;
   left: 20px;
+}
+#bodyFrontPage {
+  background-color: red;
+  float: left
+  height: 100%;
 }
