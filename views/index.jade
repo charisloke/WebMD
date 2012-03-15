@@ -1,30 +1,34 @@
-.container
-  .hero-unit.hero-box-with-shadow
-    .row
-      .saxIconLarge.pull-left
-        img(src='/images/saxIconLarge.png')
-      .welcomeText.pull-left
-        .myH1.inline Welcome
-        p.inline.pull-right
-          strong#homepageTranscriptionCount
-            = trCount
-          | &nbspTranscriptions,
-          strong#homepageTranscriptionCount
-            = userCount
-          | &nbspUsers
-        p Looking for a jazz transcription? Look no further! Transcription Hub was created to allow jazz fans like you to share and discuss transcriptions of jazz solos. Countless transcriptions are scattered throughout the internet on blogs, forums, and personal websites; we hope to gather all of these into one searchable index of every jazz solo.
-        p
-          - if (typeof(user) !== 'undefined' && user && user.username)
-            a.btn.btn-primary.btn-large(href='/browse') Browse Transcriptions Now &raquo;
-          - else
-            a.btn.btn-primary.btn-large(href='/register') Register Now &raquo;
-  .row-fluid
-    .span4
-      h2 Request Transcriptions!
-      p Upload Transcriptions (or even just online links to transcriptions), get upvotes, then request any transcription you want that we don't have! Or, fill someones elses transcription to get lots of karma points! Every transcription is rated according to a simple Up/Down voting system. A transcriptions score is simply its upvotes minus its downvotes, letting you easily find the most accurate transcriptions. Uploaders are granted Karma points for every upvote, which they can use to request new transcriptions.
-    .span4
-      h2 Upload PDFs or links
-      p We understand that not everyone has the time to create new transcriptions, and that numerous transcriptions are already available on the web, so in addition to PDFs hosted on Transcription Hub itself, we also allow you to post links to other sites! By doing this, we hope to become the place to come to if you want to search for transcriptions posted all over the internet.
-    .span4
-      h2 30 Second Registration
-      p Only registered users can vote and comment on transcriptions. This prevents gaming of the Karma system, and helps create an active community of transcribers. You get a personal profile where you can keep track of all your uploaded transcriptions, and include a link back to your blog or personal website. <strong>Registration, and all uploaded transcriptions, will always be free and open to all. </strong> Register now with our secure, 30 second registration form!
+.row-fluid
+  .span9
+    .container
+      .hero-unit.hero-box-with-shadow
+        .row
+          .saxIconLarge.pull-left
+            img(src='/images/saxIconLarge.png')
+          .welcomeText.pull-left
+            .myH1.inline Welcome
+            p.inline.pull-right
+              strong#homepageTranscriptionCount
+                = trCount
+              | &nbspTranscriptions,
+              strong#homepageTranscriptionCount
+                = userCount
+              | &nbspUsers
+            p Looking for a jazz transcription? Look no further! Transcription Hub was created to allow jazz fans like you to share and discuss transcriptions of jazz solos. Countless transcriptions are scattered throughout the internet on blogs, forums, and personal websites; we hope to gather all of these into one searchable index of every jazz solo.
+            p
+              - if (typeof(user) !== 'undefined' && user && user.username)
+                a.btn.btn-primary.btn-large(href='/browse') Browse Transcriptions Now &raquo;
+              - else
+                a.btn.btn-primary.btn-large(href='/register') Register Now &raquo;
+      .row-fluid
+        .span4
+          h2 Request Transcriptions!
+          p Upload Transcriptions (or even just online links to transcriptions), get upvotes, then request any transcription you want that we don't have! Or, fill someones elses transcription to get lots of karma points! Every transcription is rated according to a simple Up/Down voting system. A transcriptions score is simply its upvotes minus its downvotes, letting you easily find the most accurate transcriptions. Uploaders are granted Karma points for every upvote, which they can use to request new transcriptions.
+        .span4
+          h2 Upload PDFs or links
+          p We understand that not everyone has the time to create new transcriptions, and that numerous transcriptions are already available on the web, so in addition to PDFs hosted on Transcription Hub itself, we also allow you to post links to other sites! By doing this, we hope to become the place to come to if you want to search for transcriptions posted all over the internet.
+        .span4
+          h2 30 Second Registration
+          p Only registered users can vote and comment on transcriptions. This prevents gaming of the Karma system, and helps create an active community of transcribers. You get a personal profile where you can keep track of all your uploaded transcriptions, and include a link back to your blog or personal website. <strong>Registration, and all uploaded transcriptions, will always be free and open to all. </strong> Register now with our secure, 30 second registration form!
+    #bodyFrontPage.span3
+      | AAA
