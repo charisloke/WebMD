@@ -10,7 +10,6 @@ body {
 }
 body {
   background-image: url('/bs.png');
-  padding-top: 60px;
 }
 .stretchedToMargin {
   position: absolute;
