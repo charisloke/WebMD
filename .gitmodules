@@ -21,4 +21,4 @@
 	url = https://github.com/tuupola/jquery_jeditable.git
 [submodule "public/lib/parallaxjs"]
 	path = public/lib/parallaxjs
-	url = https://github.com/stolksdorf/Parallaxjs.git
+	url = git@github.com:vjsingh/Parallaxjs.git
