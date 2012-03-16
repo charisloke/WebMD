@@ -1,5 +1,5 @@
 {
-  "name": "WebMD",
+  "name": "drpepe",
   "description": "Prototype",
   "version": "0.0.1-11",
   "author": "Varun Singh <Varun_Singh@brown.edu>",
@@ -28,12 +28,15 @@
     "watch-less": "0.0.x",
     "jquery": "1.6.x"
   },
-  "subdomain": "webmd",
+  "subdomain": "drpepe",
   "env": {
-    "SUBDOMAIN": "webmd",
+    "SUBDOMAIN": "drpepe",
     "NODE_ENV": "production"
   },
-  "domains": [],
+  "domains": [
+    "doctorpepe.com",
+    "www.doctorpepe.com"
+  ],
   "databases": {},
   "ctime": 1331316704252,
   "mtime": 1331317214876
