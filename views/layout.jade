@@ -34,7 +34,7 @@ html(class='no-js', lang='en')
     script(type="text/javascript", src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js")
     script(type="text/javascript", src="/javascripts/validate.js")
     script(type='text/javascript', src='/javascripts/myUtil.js')
-    script(type='text/javascript', src='/lib/parallaxjs/parallax.min.js')
+    script(type='text/javascript', src='/lib/parallaxjs/parallax.js')
 
 
     // Added dynamically in app or views
@@ -56,18 +56,22 @@ html(class='no-js', lang='en')
       #entire-page-minus-footer
         .navbar
           .navbar-inner
-            .container-fluid
+            .container
               a.brand(href='/')
                 img#logoTopbar(src='/images/saxIcon.png', width=30, height=30)
                 .text
                   | WebMD
               ul.nav
                 li
-                  a(href='/about') About
+                  a.navButton(href='#home') Home
                 li
-                  a(href='/mission') What We Do
+                  a.navButton(href='#about') About
+                //li
+                  a.navButton(href='#mission') What We Do
                   //script(type='text/javascript', src='/javascripts/login.js')
-        != body
+        #pageContent
+          != body
+          include about
       #footer
         .inner.container-fluid
           .row-fluid
@@ -81,13 +85,66 @@ html(class='no-js', lang='en')
 
 script(type='text/javascript')
   $(function() {
-    // Make tabs active based on current page
-    var a, b, c, d, e;
-    d = $(".navbar-inner a"), e = [];
-    for (b = 0, c = d.length; b < c; b++)
-      a = d[b], e.push(function(a) {
-      if (window.location.pathname === a.pathname)
-        return $(a).parent().toggleClass("active")
-      }(a));
-      return e
+
+    //Parallax
+    var p = parallax;
+    // All the pages in order
+    var pages = ['home', 'about'];
+    pages.forEach(function(e) {
+      p.add(e, $('#' + e + 'Page'));
+    })
+    p.preload = function(thisPage) {
+      $('#pageContent').height($($(thisPage.page).children()[0]).outerHeight(true));
+      console.log($(thisPage.page));
+      console.log($($(thisPage.page).children()[0]).outerHeight(true));
+    }
+    p.home.show();
+
+    //Using arrow key navigation is super cool
+    //most users find it very intuitive
+    $(document).keydown(function(e){
+      if (e.keyCode === 39) { //this is the left key,
+        p.about.right();
+      }
+      else if (e.keyCode === 37) { //this is the left key,
+        p.home.left();
+      }
+    }); //check out the code of this demo, it has arrow key navigation!
+            //For reference; 38 - top, 39 - right, 40 - bottom
+
+    //Before using .last either check to see if it's null
+    if(typeof p.last === 'undefined'){
+      //handle it here
+      }
+      //or set it before hand
+      p.last = p.homepage;
+
+    // content is position absolutely, which messes with layout
+    // Have to set height of contents parent div
+    // dynamically to ensure footer is at bottom
+    $(window).resize(function() {
+      $('#pageContent').height($($(p.current.page).children()[0]).outerHeight(true));
+      //console.log($($(p.current.page).children()[0]).outerHeight(true));
+    })
+
+    // Make tabs active when clicked
+    navbarLinks = $(".navbar-inner a");
+    function selectOnClick(navLink) {
+      navLink.click(function(e) {
+        // deselect all others
+        navLink.parent().parent().children().removeClass('active');
+        // Select this one
+        navLink.parent().toggleClass('active');
+        // Scroll to the right page
+        var navTitle = navLink.attr('href').substring(1)
+        if (pages.indexOf(navTitle) < pages.indexOf(p.current.key)) {
+          p[navTitle].left();
+        } else {
+          p[navTitle].right();
+        }
+      });
+    }
+    for (var i = 0, l = navbarLinks.length; i < l; i++) {
+      selectOnClick($(navbarLinks[i]));
+    }
   });
