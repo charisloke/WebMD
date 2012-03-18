@@ -93,6 +93,9 @@ script(type='text/javascript')
     pages.forEach(function(e) {
       p.add(e, $('#' + e + 'Page'));
     })
+    function getCurrentPageIndex() {
+      return pages.indexOf(p.current.key);
+    };
     p.preload = function(thisPage) {
       $('#pageContent').height($($(thisPage.page).children()[0]).outerHeight(true));
       console.log($(thisPage.page));
@@ -103,11 +106,19 @@ script(type='text/javascript')
     //Using arrow key navigation is super cool
     //most users find it very intuitive
     $(document).keydown(function(e){
-      if (e.keyCode === 39) { //this is the left key,
-        p.about.right();
+      if (e.keyCode === 39) { //right
+        // if not at the end
+        if (getCurrentPageIndex() < (pages.length -1)) {
+          var nextPage = pages[getCurrentPageIndex() + 1];
+          p[nextPage].right();
+        }
       }
-      else if (e.keyCode === 37) { //this is the left key,
-        p.home.left();
+      else if (e.keyCode === 37) { //left
+        // if not at the end
+        if (getCurrentPageIndex() > 0) {
+          var nextPage = pages[getCurrentPageIndex() - 1];
+          p[nextPage].left();
+        }
       }
     }); //check out the code of this demo, it has arrow key navigation!
             //For reference; 38 - top, 39 - right, 40 - bottom
@@ -137,7 +148,7 @@ script(type='text/javascript')
         navLink.parent().toggleClass('active');
         // Scroll to the right page
         var navTitle = navLink.attr('href').substring(1)
-        if (pages.indexOf(navTitle) < pages.indexOf(p.current.key)) {
+        if (pages.indexOf(navTitle) < getCurrentPageIndex()) {
           p[navTitle].left();
         } else {
           p[navTitle].right();
