@@ -13,15 +13,17 @@ html(class='no-js', lang='en')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
 
     title= 'WebMD'
-    meta(name='description', content='AAAAAA')
-    meta(name='author', content='')
+    meta(name='description', content='Medical Information and Diagnosis Tool')
+    meta(name='author', content='Dr. Pepe Inc')
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    //
+      <!-- Le fav and touch icons -->
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
+    //jquery
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
 
     // stylesheets
@@ -66,9 +68,6 @@ html(class='no-js', lang='en')
                   a.navButton(href='#home') Home
                 li
                   a.navButton(href='#about') About
-                //li
-                  a.navButton(href='#mission') What We Do
-                  //script(type='text/javascript', src='/javascripts/login.js')
         #pageContent
           != body
           include about
@@ -103,25 +102,24 @@ script(type='text/javascript')
     }
     p.home.show();
 
-    //Using arrow key navigation is super cool
-    //most users find it very intuitive
+    // Arrow key navigation
+    // 37 - left, 38 - top, 39 - right, 40 - bottom
     $(document).keydown(function(e){
       if (e.keyCode === 39) { //right
-        // if not at the end
+        // if not at the far right
         if (getCurrentPageIndex() < (pages.length -1)) {
           var nextPage = pages[getCurrentPageIndex() + 1];
           p[nextPage].right();
         }
       }
       else if (e.keyCode === 37) { //left
-        // if not at the end
+        // if not at the far left
         if (getCurrentPageIndex() > 0) {
           var nextPage = pages[getCurrentPageIndex() - 1];
           p[nextPage].left();
         }
       }
-    }); //check out the code of this demo, it has arrow key navigation!
-            //For reference; 38 - top, 39 - right, 40 - bottom
+    });
 
     //Before using .last either check to see if it's null
     if(typeof p.last === 'undefined'){
@@ -130,7 +128,7 @@ script(type='text/javascript')
       //or set it before hand
       p.last = p.homepage;
 
-    // content is position absolutely, which messes with layout
+    // content is positioned absolutely, which messes with layout
     // Have to set height of contents parent div
     // dynamically to ensure footer is at bottom
     $(window).resize(function() {
