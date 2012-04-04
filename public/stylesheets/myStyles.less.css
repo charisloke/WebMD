@@ -71,6 +71,11 @@ body {
   top: 0%;
   z-index: 50;
 }
+#mainContent {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 @font-face {
   font-family: Vegur;
   src: url('fonts/vegur/Vegur-B 0.602.otf');
@@ -217,10 +222,4 @@ body {
   -moz-box-shadow: 10px 10px 5px #888;
   -webkit-box-shadow: 10px 10px 5px #888;
   box-shadow: 10px 10px 5px #888;
-}
-#bodyFrontPage {
-  background-image: url('/images/Homepage_image_human.png');
-  background-repeat: no-repeat;
-  float: left;
-  height: 100%;
 }
