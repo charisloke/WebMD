@@ -16,8 +16,7 @@ html(class='no-js', lang='en')
     meta(name='description', content='Medical Information and Diagnosis Tool')
     meta(name='author', content='Dr. Pepe Inc')
 
-    //
-      <!-- Le fav and touch icons -->
+    // Le fav and touch icons
       <link rel="shortcut icon" href="images/favicon.ico">
       <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
       <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -59,18 +58,22 @@ html(class='no-js', lang='en')
         .navbar
           .navbar-inner
             .container
-              a.brand(href='/')
+              a.brand.navButton(href='#home')
                 img#logoTopbar(src='/images/saxIcon.png', width=30, height=30)
                 .text
                   | WebMD
               ul.nav
                 li
-                  a.navButton(href='#home') Home
+                  a.navButton(href='#whoweare') Who We Are
                 li
-                  a.navButton(href='#about') About
+                  a.navButton(href='#whatwedo') What We Do
+                li
+                  a.navButton(href='#ourmission') Our Mission
+        #shareButton
+          img(src='http://www.progressnownm.org/assets_c/2012/03/facebook-share-thumb-100x100-5241.png')
         #pageContent
           != body
-          include about
+          include whatwedo
       #footer
         .inner.container-fluid
           .row-fluid
@@ -88,7 +91,7 @@ script(type='text/javascript')
     //Parallax
     var p = parallax;
     // All the pages in order
-    var pages = ['home', 'about'];
+    var pages = ['home', 'whoweare', 'whatwedo'];
     pages.forEach(function(e) {
       p.add(e, $('#' + e + 'Page'));
     })

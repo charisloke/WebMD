@@ -51,9 +51,15 @@ html, body{
 
 body {
   overflow-x:hidden;
-  background-image:url('/images/Homepage_image_human.png');
+  //background-image:url('/images/Homepage_image_human.png');
   //background-image:url('/brushed_alu.png');
   //padding-top: 60px;
+    background-image: linear-gradient(bottom, rgb(255,255,255) 40%, rgb(241,252,241) 85%);
+    background-image: -o-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(241,252,241) 85%);
+    background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(241,252,241) 85%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(241,252,241) 85%);
+    background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(241,252,241) 85%);
+
 }
 
 #entire-page {
@@ -75,6 +81,32 @@ body {
 #entire-page-minus-footer {
   height: 100%;
   padding-bottom: 10em;
+}
+
+#shareButton {
+  position:absolute;
+  right: 10%;
+  top: 0%;
+  z-index: 50;
+}
+
+@font-face {
+  font-family:Vegur;
+  //src: url('fonts/vegur/r.otf') format('opentype');
+  src: url('fonts/vegur/Vegur-B 0.602.otf');
+}
+
+#welcomeText {
+  font: Georgia !important;
+}
+#aboutSymptomChecker {
+  color: #00a388;
+}
+
+.aboutBox {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
 }
 
 .page {
@@ -127,8 +159,15 @@ body {
 *******************************/
 .navbar {
   position:relative;
+  margin-top: 25px;
   z-index: 1;
 }
+
+.navbar-inner {
+  background-color: #cde3ac;
+  background-image: none;
+}
+
 .navbar .container-fluid {
   min-width: 0px;
 }

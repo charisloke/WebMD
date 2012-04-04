@@ -1,3 +1,36 @@
+/*******************************
+        SEMANTIC HELPERS
+*******************************/
+.width50 {
+  width: 50%;
+}
+.width70 {
+  width: 70%;
+}
+.floatRight {
+  float: right;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.auto-width {
+  width: auto;
+}
+.stretchedToMargin {
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.inline {
+  display: inline;
+}
+/*******************************
+           SKELETON
+*******************************/
 html,
 body {
   height: 100%;
@@ -10,32 +43,11 @@ body {
 }
 body {
   overflow-x: hidden;
-  background-image: url('/images/Homepage_image_human.png');
-}
-.page {
-  width: 100%;
-  height: 100%;
-}
-#pageContent {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-.navbar {
-  position: relative;
-  z-index: 1;
-}
-.footer {
-  position: relative;
-  z-index: 1;
-}
-.stretchedToMargin {
-  position: absolute;
-  height: auto;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-image: linear-gradient(bottom, #ffffff 40%, #f1fcf1 85%);
+  background-image: -o-linear-gradient(bottom, #ffffff 40%, #f1fcf1 85%);
+  background-image: -moz-linear-gradient(bottom, #ffffff 40%, #f1fcf1 85%);
+  background-image: -webkit-linear-gradient(bottom, #ffffff 40%, #f1fcf1 85%);
+  background-image: -ms-linear-gradient(bottom, #ffffff 40%, #f1fcf1 85%);
 }
 #entire-page {
   min-width: 940px;
@@ -52,6 +64,40 @@ body {
 #entire-page-minus-footer {
   height: 100%;
   padding-bottom: 10em;
+}
+#shareButton {
+  position: absolute;
+  right: 10%;
+  top: 0%;
+  z-index: 50;
+}
+@font-face {
+  font-family: Vegur;
+  src: url('fonts/vegur/Vegur-B 0.602.otf');
+}
+#welcomeText {
+  font: Georgia !important;
+}
+#aboutSymptomChecker {
+  color: #00a388;
+}
+.aboutBox {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+.page {
+  width: 100%;
+  height: 100%;
+}
+#pageContent {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.footer {
+  position: relative;
+  z-index: 1;
 }
 /*
 +  margin: 0;
@@ -73,71 +119,23 @@ body {
 #footer a {
   color: #999;
 }
+/*******************************
+          NAVBAR
+*******************************/
+.navbar {
+  position: relative;
+  margin-top: 25px;
+  z-index: 1;
+}
+.navbar-inner {
+  background-color: #cde3ac;
+  background-image: none;
+}
 .navbar .container-fluid {
   min-width: 0px;
 }
-.navbar #username {
-  margin-left: 5px;
-}
-#password-clear {
-  margin-left: 5px;
-}
-#password-password {
-  display: none;
-  margin-left: 5px;
-}
 #logoTopbar {
   padding-top: 2px;
-}
-.container-fluid > .sidebar {
-  min-height: 100%;
-  background: whitesmoke;
-}
-.container-fluid > .sidebar > .well {
-  min-height: 100%;
-}
-.container-fluid > .sidebar > .well > .search-pane {
-  min-height: 100%;
-}
-.select-auto-width {
-  width: auto;
-}
-.center-content {
-  margin-left: auto;
-  margin-right: auto;
-}
-#uploadForm label.error {
-  float: none;
-  color: red;
-  padding-left: .5em;
-  vertical-align: top;
-}
-.numKarmaSearch {
-  padding-left: 5px;
-  padding-bottom: 3px;
-  text-align: center;
-}
-.numVotes .numPointsBountySearch {
-  margin-left: 3px;
-  padding-bottom: 5px;
-  font-size: 20px;
-}
-.search-result-fields {
-  word-wrap: break-word;
-}
-#uploadDisclaimer {
-  margin-left: 100px;
-}
-#login label.error {
-  float: bottom;
-  color: red;
-  padding-top: .5em;
-}
-#loginTopBar.error input {
-  border: solid 1px red;
-}
-.registerField {
-  margin-bottom: 18px;
 }
 .navbar-inner a {
   color: #BFBFBF;
@@ -152,91 +150,6 @@ body {
   top: -15px;
   right: -35px;
   padding-right: 40px;
-}
-.votesArrows {
-  width: 20px;
-}
-.trSongInfoDisplay {
-  line-height: 1.5em;
-}
-#username {
-  width: 100px;
-}
-#password {
-  width: 100px;
-}
-#logout {
-  margin-left: 5px;
-}
-#searchSidebar input {
-  margin-bottom: 5px;
-  width: 100%;
-}
-.search-box {
-  padding-left: 5px;
-  margin-left: 5px;
-  margin-top: 0px;
-  margin-bottom: 3px;
-  width: 86%;
-}
-.search-box.active {
-  box-shadow: inset 0 1px 2px black;
-}
-.search-pane {
-  width: 100%;
-  height: 400px;
-  overflow: auto;
-}
-#uploadedByUsername {
-  display: inline;
-}
-.width50 {
-  width: 50%;
-}
-.width70 {
-  width: 70%;
-}
-.trDisplayInfo {
-  padding-top: 10px;
-}
-.trDescription {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.trComments {
-  min-height: 100%;
-}
-.trPdfParent {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-.bounty-display {
-  position: relative;
-  top: 10px;
-}
-.display-points {
-  color: #0064cd;
-  font-size: 50px;
-  padding-right: 20px;
-  display: inline;
-  padding-bottom: 20px;
-  margin-top: 40px;
-}
-.profile-info .display-points {
-  position: relative;
-  top: 5px;
-}
-.bountyFulfilledTr {
-  padding-top: 15px;
-  font-size: 22px;
-}
-#homepageTranscriptionCount {
-  color: #0064cd;
-  font-size: 40px;
-}
-.floatRight {
-  float: right;
 }
 .alert {
   width: 80%;
@@ -253,55 +166,6 @@ body {
   -moz-box-shadow: 10px 10px 5px #888;
   -webkit-box-shadow: 10px 10px 5px #888;
   box-shadow: 10px 10px 5px #888;
-}
-.hero-box-with-shadow {
-  -moz-box-shadow: 20px 20px 5px #888;
-  -webkit-box-shadow: 20px 20px 5px #888;
-  box-shadow: 20px 20px 5px #888;
-}
-.bounty-display-info {
-  padding-top: 15px;
-  line-height: 1.2em;
-}
-.bountyInfoAddForm {
-  padding-top: 15px;
-}
-.inline {
-  display: inline;
-}
-.profile-info {
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-#profTranscriptions {
-  padding-top: 20px;
-}
-.display-points-text {
-  font-size: 25px;
-  display: inline;
-}
-.actions {
-  background: transparent;
-}
-.hero-unit {
-  color: white !important;
-  margin-top: 20px;
-  background-color: #6E6E6E;
-}
-.hero-unit .myH1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-.privacyList li {
-  color: white;
-  font-size: 18px;
-}
-.saxIconLarge {
-  position: relative;
-  top: 10px;
-  left: 20px;
 }
 #bodyFrontPage {
   background-image: url('/images/Homepage_image_human.png');
