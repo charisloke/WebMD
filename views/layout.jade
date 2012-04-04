@@ -27,7 +27,9 @@ html(class='no-js', lang='en')
 
     // stylesheets
     link(rel='stylesheet', type='text/css', href='/stylesheets/bs/docs/assets/css/bootstrap.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/myStyles.less.css')
+    //link(rel='stylesheet', type='text/css', href='/stylesheets/myStyles.less.css')
+    link(rel='stylesheet/less', type='text/css', href='/stylesheets/myStyles.less')
+    script(src='lib/less-1.3.0.min.js', type='text/javascript')
 
     // js files
     script(type="text/javascript", src="/stylesheets/bs/js/bootstrap-tooltip.js")
@@ -71,7 +73,9 @@ html(class='no-js', lang='en')
           img(src='http://www.progressnownm.org/assets_c/2012/03/facebook-share-thumb-100x100-5241.png')
         #pageContent
           != body
+          include whoweare
           include whatwedo
+          include ourmission
       #footer
         .inner.container-fluid
           .row-fluid
@@ -89,7 +93,7 @@ script(type='text/javascript')
     //Parallax
     var p = parallax;
     // All the pages in order
-    var pages = ['home', 'whoweare', 'whatWeDo'];
+    var pages = ['home', 'whoWeAre', 'whatWeDo', 'ourMission'];
     pages.forEach(function(e) {
       p.add(e, $('#' + e + 'Page'));
     })
