@@ -97,16 +97,70 @@ body {
 }
 
 #welcomeText {
-  font: Georgia !important;
+  font-family: Vegur;
+  font-style: italic;
 }
 #aboutSymptomChecker {
   color: #00a388;
+  background-color:#d1eee9;
+  background-image:url('http://code.google.com/p/big-planet-tracks/logo?cct=1279968768');
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+}
+
+#aboutSecondItem {
+  background-color:#d1e5e6
+}
+
+#aboutThirdItem {
+  background-color:#f2e2d3;
+}
+
+#aboutSecondItem, #aboutThirdItem {
+  vertical-align:-50px;
+  background-image:url('http://code.google.com/p/android-rcs-ims-stack/logo?cct=1330116696968768');
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+  text-align:right;
+}
+
+#aboutSecondItem:link, #aboutThirdItem:link, #aboutSymptomChecker:link {
+  border-style: dotted;
+}
+
+#aboutSecondItem:visited, #aboutThirdItem:visited, #aboutSymptomChecker:visited {
+   border-style: dotted;
+}
+
+#aboutSymptomChecker:hover {
+  background-color:#82d2c3;
+}
+
+#aboutSecondItem:hover {
+  background-color:#b4d1d9;
+}
+
+#aboutThirdItem:hover {
+  background-color:#e6ad89;
+}
+
+#aboutSecondItem:hover, #aboutThirdItem:hover, #aboutSymptomChecker:hover {
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
 }
 
 .aboutBox {
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
+  width:100px;
+  height:300px;
+  border-style:double;
+  border-color: #9ec3c9;
+  border-width: 3px;
+}
+
+.aboutText {
+  position:relative;
+  top:80%;
 }
 
 .page {
