@@ -1,4 +1,9 @@
 /*******************************
+        VARIABLES
+*******************************/
+@lightGreenText: #00a388;
+
+/*******************************
         SEMANTIC HELPERS
 *******************************/
 .width50 {
@@ -10,6 +15,9 @@
 
 .floatRight {
   float: right;
+}
+.floatLeft {
+  float: left;
 }
 
 .center {
@@ -63,7 +71,7 @@ body {
 }
 
 #entire-page {
-  min-width: 940px;
+  min-width: 1024px;
   position: relative;
   //position: absolute;
   bottom: 0;
@@ -90,7 +98,7 @@ body {
   z-index: 50;
 }
 
-#mainContent {
+.mainContent {
   width:80%;
   margin-left:auto;
   margin-right:auto;
@@ -106,8 +114,93 @@ body {
   font-family: Vegur;
   font-style: italic;
 }
+
+.introBoxes {
+  height: 500px;
+  width: 300px !important;
+}
+
+#chooseBodyTypeTxt {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: @lightGreenText;
+  padding: 30px;
+  font-size: 20px;
+}
+
+#bodyImgs {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#introBox {
+  //background-image: url('http://releaf.co/wp-content/uploads/2011/12/ist2_4605577-cartoon-doctor.jpg');
+  //background-size: 100px;
+  //background-repeat: no-repeat;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  > #introBtnGrp {
+    padding: 5px 0px 0px 0px;
+    margin-right: 5px;
+    width: 100%;
+    > .btn {
+      padding: 0px;
+      width: 100%;
+      height: 30px;
+      > .btnText {
+        padding-top: 5px;
+      }
+    }
+    > #lookUpBtn {
+      background-image: linear-gradient(bottom, rgb(182,211,219) 41%, rgb(237,246,245) 86%);
+      background-image: -o-linear-gradient(bottom, rgb(182,211,219) 41%, rgb(237,246,245) 86%);
+      background-image: -moz-linear-gradient(bottom, rgb(182,211,219) 41%, rgb(237,246,245) 86%);
+      background-image: -webkit-linear-gradient(bottom, rgb(182,211,219) 41%, rgb(237,246,245) 86%);
+      background-image: -ms-linear-gradient(bottom, rgb(182,211,219) 41%, rgb(237,246,245) 86%);
+      border-style: solid;
+      border-color: #b2d2df;
+      border-width: 2px;
+      color: #005c80;
+    }
+    > #findClinicBtn {
+      background-image: linear-gradient(bottom, #D0AA95 41%, #F9E7DB 86%);
+      background-image: -o-linear-gradient(bottom, #D0AA95 41%, #F9E7DB 86%);
+      background-image: -moz-linear-gradient(bottom, #D0AA95 41%, #F9E7DB 86%);
+      background-image: -webkit-linear-gradient(bottom, #D0AA95 41%, #F9E7DB 86%);
+      background-image: -ms-linear-gradient(bottom, #D0AA95 41%, #F9E7DB 86%);
+      border-style: solid;
+      border-color: #cdaa94;
+      border-width: 2px;
+      color: #d1570d;
+    }
+  }
+}
+
+#bodyBox {
+
+}
+
+#introDocImg {
+  margin: 4px;
+}
+
+#introBoxTopText {
+  color: @lightGreenText;
+  font-size: 20px;
+  font-style: italic;
+  padding: 25px 20px 10px 20px;
+}
+
+#introDescription {
+  word-wrap: break-word;
+  padding: 20px;
+}
+
 #aboutSymptomChecker {
-  color: #00a388;
+  color: @lightGreenText;
   background-color:#d1eee9;
   background-image:url('http://code.google.com/p/big-planet-tracks/logo?cct=1279968768');
   background-repeat: no-repeat;
@@ -238,7 +331,8 @@ body {
 
 .navbar-inner {
   a {
-    color: #BFBFBF;
+    color: @lightGreenText !important;
+    font-style: italic;
   }
 }
 

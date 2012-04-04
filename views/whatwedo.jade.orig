@@ -1,0 +1,31 @@
+#whatWeDoPage.page
+<<<<<<< HEAD
+  #welcomeText.row-fluid
+    | Hello. We're Dr.Pepe, and this is what we do.
+  .row-fluid
+    #aboutSymptomChecker.aboutBox.span3
+      .aboutText
+        | Symptom Checker:
+        | Feeling sick? Get diagnosis now.
+    #aboutSecondItem.aboutBox.span3
+      .aboutText
+        | Second Item
+    #aboutThirdItem.aboutBox.span3
+      .aboutText
+        | Other Item
+=======
+  #mainContent
+    #welcomeText.row-fluid
+      | Hello. We're Dr.Pepe, and this is what we do.
+    .row-fluid
+      #aboutSymptomChecker.aboutBox.span3
+        .aboutText
+          | Symptom Checker: 
+          | Feeling sick? Get diagnosis now.
+      #aboutSecondItem.aboutBox.span3
+        .aboutText
+          | Second Item
+      #aboutThirdItem.aboutBox.span3
+        .aboutText
+          | Other Item
+>>>>>>> f1798c3844fcc4006ea99b1b7807a76be481eb79
