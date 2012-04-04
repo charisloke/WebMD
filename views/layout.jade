@@ -58,15 +58,13 @@ html(class='no-js', lang='en')
         .navbar
           .navbar-inner
             .container
-              a.brand.navButton(href='#home')
-                img#logoTopbar(src='/images/saxIcon.png', width=30, height=30)
-                .text
-                  | WebMD
               ul.nav
+                li
+                  a.navButton(href='#home') Dr. Pepe
                 li
                   a.navButton(href='#whoweare') Who We Are
                 li
-                  a.navButton(href='#whatwedo') What We Do
+                  a.navButton(href='#whatWeDo') What We Do
                 li
                   a.navButton(href='#ourmission') Our Mission
         #shareButton
@@ -91,7 +89,7 @@ script(type='text/javascript')
     //Parallax
     var p = parallax;
     // All the pages in order
-    var pages = ['home', 'whoweare', 'whatwedo'];
+    var pages = ['home', 'whoweare', 'whatWeDo'];
     pages.forEach(function(e) {
       p.add(e, $('#' + e + 'Page'));
     })
@@ -143,6 +141,7 @@ script(type='text/javascript')
     navbarLinks = $(".navbar-inner a");
     function selectOnClick(navLink) {
       navLink.click(function(e) {
+        console.log("CLICK");
         // deselect all others
         navLink.parent().parent().children().removeClass('active');
         // Select this one
