@@ -115,27 +115,24 @@ body {
   font-style: italic;
 }
 
-.introBoxes {
-  height: 500px;
-  width: 300px !important;
-}
-
 #chooseBodyTypeTxt {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   color: @lightGreenText;
   padding: 30px;
   font-size: 20px;
 }
 
 #bodyImgs {
-  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
 
 #introBox {
+  height: 500px;
+  width: 300px ;
   background-color: white;
   //background-image: url('http://releaf.co/wp-content/uploads/2011/12/ist2_4605577-cartoon-doctor.jpg');
   //background-size: 100px;
@@ -181,6 +178,8 @@ body {
 }
 
 #bodyBox {
+  height: 500px;
+  width: 500px ;
   background-color: #ebf8ef;
 }
 
@@ -291,6 +290,12 @@ body {
   z-index: 1;
 }
 
+#footerNavs {
+  > li {
+    padding: 10px;
+  }
+}
+
 
 /*
 +  margin: 0;
@@ -299,20 +304,21 @@ body {
 +  height:40px;
 */
 #footer {
-  color: #767676;
-  background-color: #252525;
+  // TODO: Change Color
+  background-color: #bfde97;
+  color: @lightGreenText;
+  a {
+    color: @lightGreenText;
+  }
+  a:visited {
+    //color: #444;
+    //color: #999;
+  }
   padding: 15px 0 15px 0;
 
   position: absolute;
   bottom: 0;
   width: 100%;
-  a:visited {
-    //color: #444;
-    color: #999;
-  }
-  a {
-    color: #999;
-  }
 }
 
 /*******************************
@@ -340,6 +346,7 @@ body {
 .navbar-inner {
   a {
     color: @lightGreenText !important;
+    font-weight: bold;
     font-style: italic;
   }
 }

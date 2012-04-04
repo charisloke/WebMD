@@ -79,13 +79,17 @@ html(class='no-js', lang='en')
       #footer
         .inner.container-fluid
           .row-fluid
-            .span6
-              | Built with Node.js, Express, and MongoDB.
-              a#footerFeedback(href='#') Feedback & Support
-              | &nbsp
-              a#footerPrivacy(href='/privacy') Privacy Policy
-              br.inline
-              &copy; 2012 Varun Singh
+            ul#footerNavs.nav.floatRight
+              li.floatLeft
+                a.navButton(href='#home') About  /
+              li.floatLeft
+                a.navButton(href='#whoweare') Disclaimer  /
+              li.floatLeft
+                a.navButton(href='#whoweare') For Doctors  /
+              li.floatLeft
+                a.navButton(href='#whoweare') For Investors  /
+
+              &copy; 2012 Dr. Pepe
 
 script(type='text/javascript')
   $(function() {
@@ -140,6 +144,11 @@ script(type='text/javascript')
       $('#pageContent').height($($(p.current.page).children()[0]).outerHeight(true));
       //console.log($($(p.current.page).children()[0]).outerHeight(true));
     })
+
+    // Resize divs
+    $('#bodyImgs').width(
+      $($('#maleImg').children()[0]).outerWidth(true) +
+      $($('#femaleImg').children()[0]).outerWidth(true));
 
     // Make tabs active when clicked
     navbarLinks = $(".navbar-inner a");
