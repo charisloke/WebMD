@@ -72,6 +72,7 @@ html(class='no-js', lang='en')
         #shareButton
           img(src='http://www.progressnownm.org/assets_c/2012/03/facebook-share-thumb-100x100-5241.png')
         #pageContent
+          include symptomChecker
           != body
           include whoweare
           include whatwedo
@@ -97,7 +98,7 @@ script(type='text/javascript')
     //Parallax
     var p = parallax;
     // All the pages in order
-    var pages = ['home', 'whoWeAre', 'whatWeDo', 'ourMission'];
+    var pages = ['symptomChecker', 'home', 'whoWeAre', 'whatWeDo', 'ourMission'];
     pages.forEach(function(e) {
       p.add(e, $('#' + e + 'Page'));
     })
@@ -106,8 +107,8 @@ script(type='text/javascript')
     };
     p.preload = function(thisPage) {
       $('#pageContent').height($($(thisPage.page).children()[0]).outerHeight(true));
-      console.log($(thisPage.page));
-      console.log($($(thisPage.page).children()[0]).outerHeight(true));
+      //console.log($(thisPage.page));
+      //console.log($($(thisPage.page).children()[0]).outerHeight(true));
     }
     p.home.show();
 
@@ -145,7 +146,16 @@ script(type='text/javascript')
       //console.log($($(p.current.page).children()[0]).outerHeight(true));
     })
 
+    var clickedDiv;
     // Resize divs
+    $('.bodyImg').click(function(e) {
+      clickedDiv = $($(this)[0]);
+      var isMale = (clickedDiv.attr('id') === 'maleImg') ? true : false;
+      var youChoseText = 'You chose ' + (isMale ? 'Male' : 'Female');
+      $('#youChose').html(youChoseText);
+      p['symptomChecker'].left();
+    });
+
     $('#bodyImgs').width(
       $($('#maleImg').children()[0]).outerWidth(true) +
       $($('#femaleImg').children()[0]).outerWidth(true));
@@ -154,7 +164,6 @@ script(type='text/javascript')
     navbarLinks = $(".navbar-inner a");
     function selectOnClick(navLink) {
       navLink.click(function(e) {
-        console.log("CLICK");
         // deselect all others
         navLink.parent().parent().children().removeClass('active');
         // Select this one

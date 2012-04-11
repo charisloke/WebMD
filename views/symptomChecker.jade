@@ -1,0 +1,25 @@
+#symptomCheckerPage.page
+  .container
+    .row-fluid
+      #generalSymptoms.span4
+        #generalSymptomsBox
+          #youChose
+          br
+          br
+          | Do you have any general symptoms that aren't specific to a body part, like these?
+          #generalSymptomsList
+            li
+              ul
+                | No General Symptoms
+              ul
+                | Chills
+              ul
+                | Excessive Sweating
+              ul
+                | Fatigue (tiredness)
+      #body.span3
+      #chosenSymptoms.span5
+
+script(type='text/javascript')
+  $(function() {
+  });
