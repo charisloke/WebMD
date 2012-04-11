@@ -396,7 +396,7 @@ body {
 }
 
 #symptomCheckerPage {
-  background-color: #9ED9F0;
+  //background-color: #9ED9F0;
 }
 
 #generalSymptomsBox {
@@ -431,4 +431,52 @@ body {
     }
     margin-top: 50px;
   }
+}
+
+
+#bodyImage {
+  
+  width:200px;
+  height:640px;
+  background: url('/images/fembody_base.png') no-repeat;
+  //background-size:100%;
+  margin-left:50px;
+}
+
+#bodyChest {
+  position:absolute;
+  top:0px;
+  width:160px;
+  height:215px;
+  background: url('/images/fembody_chest.png');
+  margin-left:50px;
+  opacity:0.0;
+  z-index:9;
+}
+
+#bodyArms {
+  position:absolute;
+  top:0px;
+  width:200px;
+  height:400px;
+  background: url('/images/fembody_hands.png');
+  margin-left:50px;
+  opacity:0.0;
+}
+
+#bodyHead {
+  position:absolute;
+  top:0px;
+  width:180px;
+  height:110px;
+  background: url('/images/fembody_head.png');
+  margin-left:50px;
+  opacity:0.0;
+  z-index:10;
+}
+
+
+#bodyChest:hover, #bodyArms:hover, #bodyHead:hover {
+  position:absolute;
+  opacity:1.0;
 }
