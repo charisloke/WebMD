@@ -206,62 +206,71 @@ body {
   padding: 20px;
 }
 
-#aboutSymptomChecker {
-  color: @lightGreenText;
+#lowerSC {
+  height:106px;
   background-color:#d1eee9;
-  background-image:url('http://code.google.com/p/big-planet-tracks/logo?cct=1279968768');
-  background-repeat: no-repeat;
-  background-position: 50% 20%;
 }
 
-#aboutSecondItem {
+#upperSC {
+  height:196px;
+  background: url('http://code.google.com/p/big-planet-tracks/logo?cct=1279968768') no-repeat 50% 50%, -webkit-linear-gradient(bottom, #E4ECE9 21%, #FFFFFF 61%);
+}
+
+#lowerSI {
+  height:106px;
   background-color:#d1e5e6
 }
 
-#aboutThirdItem {
+#upperSI, #upperTI {
+  height:196px;
+  background: url('http://code.google.com/p/android-rcs-ims-stack/logo?cct=1330116696968768') no-repeat 50% 50%, -webkit-linear-gradient(bottom, #E4ECE9 21%, #FFFFFF 61%);
+}
+
+#lowerTI {
+  height:106px;
   background-color:#f2e2d3;
 }
 
-#aboutSecondItem, #aboutThirdItem {
-  vertical-align:-50px;
-  background-image:url('http://code.google.com/p/android-rcs-ims-stack/logo?cct=1330116696968768');
-  background-repeat: no-repeat;
-  background-position: 50% 20%;
-  text-align:right;
+#aboutSymptomChecker:link, #aboutSecondItem:link, #aboutThirdItem:link {
+  border-style: none;
 }
 
-#aboutSecondItem:link, #aboutThirdItem:link, #aboutSymptomChecker:link {
-  border-style: dotted;
+#aboutSymptomChecker:visited, #aboutSecondItem:visited, #aboutThirdItem:visited {
+   border-style: none;
 }
 
-#aboutSecondItem:visited, #aboutThirdItem:visited, #aboutSymptomChecker:visited {
-   border-style: dotted;
-}
-
-#aboutSymptomChecker:hover {
+#aboutSymptomChecker:hover #lowerSC {
   background-color:#82d2c3;
 }
 
-#aboutSecondItem:hover {
+#aboutSecondItem:hover #lowerSI {
   background-color:#b4d1d9;
 }
 
-#aboutThirdItem:hover {
+#aboutThirdItem:hover #lowerTI{
   background-color:#e6ad89;
 }
 
 #aboutSecondItem:hover, #aboutThirdItem:hover, #aboutSymptomChecker:hover {
   border-style: solid;
   border-width: 4px;
-  border-color: black;
+}
+
+#aboutSymptomChecker:hover {
+  border-color:#62c7b4;
+}
+
+#aboutSecondItem:hover {
+  border-color:#9ec3c9;
+}
+
+#aboutThirdItem:hover {
+  border-color:#df9969;
 }
 
 .aboutBox {
   width:100px;
   height:300px;
-  border-style:double;
-  border-color: #9ec3c9;
-  border-width: 3px;
 }
 
 .aboutText {
