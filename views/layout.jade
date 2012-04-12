@@ -94,6 +94,7 @@ html(class='no-js', lang='en')
 
 script(type='text/javascript')
   $(function() {
+    $('.jqueryHide').hide();
 
     //Parallax
     var p = parallax;
@@ -180,4 +181,15 @@ script(type='text/javascript')
     for (var i = 0, l = navbarLinks.length; i < l; i++) {
       selectOnClick($(navbarLinks[i]));
     }
+
+    addSymptom = function(name, bodyPart) {
+      $('#specificSymptomsBox').show();
+      $("#chosenSymptoms").append(
+        '<li>' + name + ' ' + bodyPart + '</li>'
+      );
+    }
+    $('.symptom').click(function(a, b) {
+      console.log(a, b);
+    });
+
   });

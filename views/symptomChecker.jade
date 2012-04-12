@@ -8,15 +8,18 @@
           br
           | Do you have any general symptoms that aren't specific to a body part, like these?
           #generalSymptomsList
-            li
-              ul
+            ul
+              li
                 | No General Symptoms
-              ul
+              li.symptom
                 | Chills
-              ul
+              li.symptom
                 | Excessive Sweating
-              ul
+              li.symptom
                 | Fatigue (tiredness)
+        #specificSymptomsBox.jqueryHide
+          | Chosen Symptoms:
+          ul#chosenSymptoms
       #body.span3
         #bodyImage
         #bodyChest

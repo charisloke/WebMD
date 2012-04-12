@@ -400,14 +400,18 @@ body {
   //background-color: #9ED9F0;
 }
 
-#generalSymptomsBox {
+
+.symptomsBox (@width: 1px) {
   margin-top: 10%;
   border-style: solid;
   border-color: lightGreenText;
   border-width: 1px;
   background-color: white;
   margin-bottom: 20%;
+}
 
+#generalSymptomsBox {
+  .symptomsBox;
   font-size: 15px;
   font-style: italic;
   color: @lightGreenText;
@@ -416,16 +420,16 @@ body {
     margin-top: 10px;
   }
   #generalSymptomsList {
-    li {
+    ul {
       list-style-type: none;
-      ul {
+      li {
         margin-top: auto;
         margin-bottom: auto;
         padding: 10px 0 10px 30px;
         background: url('/images/add_button.png') left center no-repeat;
         border-top: solid 1px gray;
       }
-      ul:hover {
+      li:hover {
         background: url('/images/add_highlight.png') left center no-repeat;
         color: #DB5132;
       }
@@ -434,9 +438,13 @@ body {
   }
 }
 
+#specificSymptomsBox {
+  .symptomsBox;
+}
+
 
 #bodyImage {
-  
+
   width:200px;
   height:640px;
   background: url('/images/fembody_base.png') no-repeat;
