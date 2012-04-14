@@ -182,14 +182,29 @@ script(type='text/javascript')
       selectOnClick($(navbarLinks[i]));
     }
 
+    addedSymptoms = {};
     addSymptom = function(name, bodyPart) {
-      $('#specificSymptomsBox').show();
-      $("#chosenSymptoms").append(
-        '<li>' + name + ' ' + bodyPart + '</li>'
-      );
+      addedSymptomString = name;
+      if (bodyPart) {
+        addedSymptomString = addedSymptomString + ' (' + bodypart + ')';
+      }
+      if (!addedSymptoms[addedSymptomString]) {
+        addedSymptoms[addedSymptomString] = true;
+        $('#specificSymptomsBox').show();
+        $("#chosenSymptoms").append(
+          '<li id="' + addedSymptomString + '" class="symptom chosenSymptom">' + addedSymptomString + '</li>'
+        );
+        $('.chosenSymptom').click(function(e) {
+          removeSymptom($(this))
+        });
+      }
     }
-    $('.symptom').click(function(a, b) {
-      console.log(a, b);
+    removeSymptom = function(div) {
+      delete addedSymptoms[div.attr('id')];
+      div.remove();
+    }
+    $('.symptom').click(function(e) {
+      addSymptom($(this).html())
     });
 
   });

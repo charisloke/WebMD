@@ -410,36 +410,43 @@ body {
   margin-bottom: 20%;
 }
 
-#generalSymptomsBox {
-  .symptomsBox;
+.symptomsText {
   font-size: 15px;
   font-style: italic;
   color: @lightGreenText;
+}
+#generalSymptomsBox {
+  .symptomsBox;
+  .symptomsText;
+  .symptomsList("add");
 
   #youChose {
     margin-top: 10px;
   }
-  #generalSymptomsList {
-    ul {
-      list-style-type: none;
-      li {
-        margin-top: auto;
-        margin-bottom: auto;
-        padding: 10px 0 10px 30px;
-        background: url('/images/add_button.png') left center no-repeat;
-        border-top: solid 1px gray;
-      }
-      li:hover {
-        background: url('/images/add_highlight.png') left center no-repeat;
-        color: #DB5132;
-      }
+}
+
+.symptomsList (@button) {
+  ul {
+    list-style-type: none;
+    li {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding: 10px 0 10px 30px;
+      background: url("../images/@{button}_button.png") left center no-repeat;
+      border-top: solid 1px gray;
     }
-    margin-top: 50px;
+    li:hover {
+      background: url('../images/@{button}_highlight.png') left center no-repeat;
+      color: #DB5132;
+    }
   }
+  margin-top: 50px;
 }
 
 #specificSymptomsBox {
   .symptomsBox;
+  .symptomsText;
+  .symptomsList("minus");
 }
 
 
